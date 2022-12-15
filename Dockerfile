@@ -10,7 +10,7 @@ RUN ng build --configuration production --output-path=/dist
 ################
 # Run in NGINX #
 ################
-FROM nginxinc/nginx-unprivileged 
+FROM nginx:alpine
 COPY --from=builder /dist /usr/share/nginx/html
 CMD ["nginx", "-g", "daemon off;"]
 #CMD ["/bin/sh",  "-c",  "envsubst < /usr/share/nginx/html/assets/env.template.js > /usr/share/nginx/html/assets/env.js && exec nginx -g 'daemon off;'"]
