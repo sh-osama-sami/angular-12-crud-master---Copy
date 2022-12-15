@@ -1,4 +1,4 @@
-FROM node:16.13-alpine as builder
+FROM public.ecr.aws/bitnami/node:16.13.1-prod-debian-10-r36 as builder
 
 WORKDIR /app
 COPY package.json package-lock.json ./
@@ -10,7 +10,7 @@ RUN ng build --configuration production --output-path=/dist
 ################
 # Run in NGINX #
 ################
-FROM nginx:alpine
+FROM public.ecr.aws/bitnami/nginx:latest
 COPY --from=builder /dist /usr/share/nginx/html
 CMD ["nginx", "-g", "daemon off;"]
 #CMD ["/bin/sh",  "-c",  "envsubst < /usr/share/nginx/html/assets/env.template.js > /usr/share/nginx/html/assets/env.js && exec nginx -g 'daemon off;'"]
