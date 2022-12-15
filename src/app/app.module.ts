@@ -15,10 +15,7 @@ import { AdminSigninComponent } from './admin/admin-signin/admin-signin.componen
 import { EditTripStationComponent } from './components/edit-trip-station/edit-trip-station.component';
 import { AddStationComponent } from './add-station/add-station.component';
 import { StationEditComponent } from './station-edit/station-edit.component';
-import { AppConfigService } from './providers/app-config.service';
-export function initConfig(appConfig:AppConfigService){
-  return()=>appConfig.loadConfig();
-  }
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,13 +35,9 @@ export function initConfig(appConfig:AppConfigService){
     FormsModule,
     HttpClientModule
   ],
-  providers: [{
-    provide:APP_INITIALIZER,
-    useFactory:initConfig,
-    deps:[AppConfigService],
-    multi:true,
-
-  }],
+  providers: [
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
