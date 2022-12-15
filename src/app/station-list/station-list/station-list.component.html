@@ -1,0 +1,35 @@
+
+  <div class="col-md-6">
+    <h4>Station List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let station of stations; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTrip(station, i)"
+      >
+        {{ station.id }}
+      </li>
+    </ul>
+
+   
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentstation.id">
+      <h4>Stations</h4>
+      <div>
+        <label><strong>name :</strong></label> {{ currentstation.name }}
+      </div>
+      
+      <a class="badge badge-primary" routerLink="/station/{{ currentstation.id }}">
+        Edit
+      </a>
+
+      
+    </div>
+
+    <div *ngIf="!currentstation">
+      <br />
+      <p>Please click on a Tutorial...</p>
+    </div>
+  </div>

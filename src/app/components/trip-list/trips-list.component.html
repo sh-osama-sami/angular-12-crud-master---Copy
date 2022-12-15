@@ -1,0 +1,45 @@
+
+  <div class="col-md-6">
+    <h4>Trip List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let trip of trips; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTrip(trip, i)"
+      >
+        {{ trip.id }}
+      </li>
+    </ul>
+
+   
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currtrip.id">
+      <h4>Trips</h4>
+      <div>
+        <label><strong>start time:</strong></label> {{ currtrip.startTime }}
+      </div>
+      <div>
+        <label><strong>end time:</strong></label>
+        {{ currtrip.endTime }}
+      </div>
+      <div>
+        <label><strong>stations:</strong></label> 
+       
+      </div>
+     <div  *ngFor="let station of currtrip.stations"> {{ station.name }}</div>
+
+      <a class="badge badge-primary" routerLink="/trips/{{ currtrip.id }}">
+        Edit
+      </a>
+      <a class="badge badge-primary" routerLink="/setstation/{{ currtrip.id }}">
+        set stations
+      </a>
+    </div>
+
+    <div *ngIf="!currtrip">
+      <br />
+      <p>Please click on a Tutorial...</p>
+    </div>
+  </div>

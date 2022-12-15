@@ -1,0 +1,41 @@
+<div>
+    <div *ngIf="currstation.id" class="edit-form">
+      <h4>Trip</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">station name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currstation.name"
+            name="title"
+          />
+        </div>
+       
+  
+        
+      </form>
+  
+     
+  
+      <button class="badge badge-danger mr-2" (click)="deleteStation()">
+        Delete
+      </button>
+      <p>{{ data }}</p>
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateStation()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currstation.id">
+      <br />
+      <p>Cannot access this Trip...</p>
+    </div>
+  </div>
+  

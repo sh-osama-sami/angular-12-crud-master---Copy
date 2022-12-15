@@ -1,0 +1,38 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="starttime">set username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="starttime"
+            required
+            [(ngModel)]="admin.username"
+            name="starttime"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="endtime">set password</label>
+          <input
+            class="form-control"
+            id="endtime"
+            required
+            [(ngModel)]="admin.password"
+            name="endtime"
+          />
+        </div>
+  
+       
+  
+        <button (click)="signup()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>admin was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newUser()">Add</button>
+      </div>
+    </div>
+  </div>
+  

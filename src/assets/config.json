@@ -1,0 +1,5 @@
+{
+    "server1": "http://trip-backend-sherysamy-mysql-openshift.apps.eu410.prod.nextcle.com",
+    "server2": "http://localhost:9090",
+    "server3": "http://localhost:8080"
+}
