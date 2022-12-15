@@ -7,8 +7,8 @@ import { station } from '../models/station.model';
 import { environment } from 'src/environments/environment';
 //import configurl from 'src/assets/config.json';
 
-//const baseUrl = 'http://localhost:9090/Trip';
-const baseUrl = environment.apiUrl+'/Trip';
+const baseUrl = 'http://trip-backend-sherysamy-mysql-openshift.apps.eu410.prod.nextcle.com/Trip';
+//const baseUrl = environment.apiUrl+'/Trip';
 
 @Injectable({
   providedIn: 'root'

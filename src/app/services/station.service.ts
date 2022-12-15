@@ -5,8 +5,8 @@ import { trip } from '../models/trip.model';
 import { station } from '../models/station.model';
 import { environment } from 'src/environments/environment';
 //import configurl from 'src/assets/config.json';
-//const baseUrl = 'http://localhost:9090/Station';
-const baseUrl = environment.apiUrl+'/Station';
+const baseUrl = 'http://trip-backend-sherysamy-mysql-openshift.apps.eu410.prod.nextcle.com/Station';
+//const baseUrl = environment.apiUrl+'/Station';
 
 
 @Injectable({

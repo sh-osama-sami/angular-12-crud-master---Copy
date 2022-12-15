@@ -6,10 +6,10 @@ import { admin } from '../models/admin.model';
 import { environment } from 'src/environments/environment';
 //import configurl from 'src/assets/config.json';
 
-//const signup = 'http://localhost:9090/signup';
-//const login = 'http://localhost:9090/login';
-  const signup = environment.apiUrl+'/signup';
-  const login = environment.apiUrl+'/login';
+const signup = 'http://trip-backend-sherysamy-mysql-openshift.apps.eu410.prod.nextcle.com/signup';
+const login = 'http://trip-backend-sherysamy-mysql-openshift.apps.eu410.prod.nextcle.com/login';
+  //const signup = environment.apiUrl+'/signup';
+ // const login = environment.apiUrl+'/login';
 @Injectable({
   providedIn: 'root'
 })
