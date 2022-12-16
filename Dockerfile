@@ -12,8 +12,9 @@ RUN ng build --configuration production --output-path=/dist
 ################
 FROM public.ecr.aws/bitnami/nginx:latest
 COPY --from=builder /dist /usr/share/nginx/html
-CMD ["nginx", "-g", "daemon off;"]
-#CMD ["/bin/sh",  "-c",  "envsubst < /usr/share/nginx/html/assets/env.template.js > /usr/share/nginx/html/assets/env.js && exec nginx -g 'daemon off;'"]
+RUN chmod 777 /usr/share/nginx/html/assets/env.js
+#CMD ["nginx", "-g", "daemon off;"]
+CMD ["/bin/sh",  "-c",  "envsubst < /usr/share/nginx/html/assets/env.template.js > /usr/share/nginx/html/assets/env.js && exec nginx -g 'daemon off;'"]
 #RUN mkdir -p /app
 
 #WORKDIR /app
