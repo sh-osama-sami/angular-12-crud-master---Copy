@@ -18,7 +18,7 @@ RUN npm install
 COPY . .
 
 #### generate build --prod
-RUN npm run build:ssr
+RUN ng build --prod vitorspace && ng run vitorspace:server:production
 
 ### STAGE 2: Run ###
 FROM nginxinc/nginx-unprivileged
