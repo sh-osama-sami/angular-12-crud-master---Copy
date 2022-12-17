@@ -37,8 +37,8 @@
 ################
 # Run in NGINX #
 ################
-#FROM public.ecr.aws/bitnami/node:16.13.1-prod-debian-10-r36 as builder
-FROM node:lts-alpine AS builder
+FROM public.ecr.aws/bitnami/node:16.13.1-prod-debian-10-r36 as builder
+#FROM node:lts-alpine AS builder
 
 WORKDIR /app
 COPY package.json package-lock.json ./
@@ -49,10 +49,10 @@ RUN npm install -g @angular/cli
 RUN ng build --configuration production --output-path=/dist
 EXPOSE 4200
 
-#FROM public.ecr.aws/bitnami/nginx:latest
-FROM nginxinc/nginx-unprivileged
+FROM public.ecr.aws/bitnami/nginx:latest
+#FROM nginxinc/nginx-unprivileged
 
-COPY --from=builder /dist /usr/share/nginx/html
+COPY --from=builder /dist /opt/bitnami/nginx/html
 #RUN chmod 777 /usr/share/nginx/html/assets/env.js
 CMD ["nginx", "-g", "daemon off;"]
 
