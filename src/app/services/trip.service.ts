@@ -7,7 +7,7 @@ import { station } from '../models/station.model';
 import { environment } from 'src/environments/environment';
 //import configurl from 'src/assets/config.json';
 
-const baseUrl = 'http://trip-backend-tools3.apps.eu410.prod.nextcle.com/Trip';
+const baseUrl = 'https://trip-backend-tools3.apps.eu410.prod.nextcle.com/Trip';
 //const baseUrl = environment.apiUrl+'/Trip';
 
 @Injectable({

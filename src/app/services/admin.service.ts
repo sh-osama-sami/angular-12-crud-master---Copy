@@ -6,8 +6,8 @@ import { admin } from '../models/admin.model';
 import { environment } from 'src/environments/environment';
 //import configurl from 'src/assets/config.json';
 
-const signup = 'http://trip-backend-tools3.apps.eu410.prod.nextcle.com/signup';
-const login = 'http://trip-backend-tools3.apps.eu410.prod.nextcle.com/login';
+const signup = 'https://trip-backend-tools3.apps.eu410.prod.nextcle.com/signup';
+const login = 'https://trip-backend-tools3.apps.eu410.prod.nextcle.com/login';
   //const signup = environment.apiUrl+'/signup';
  // const login = environment.apiUrl+'/login';
 @Injectable({
