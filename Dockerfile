@@ -44,9 +44,10 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
+RUN npm install cors --save
 RUN npm install -g @angular/cli
 RUN ng build --configuration production --output-path=/dist
-EXPOSE 80
+EXPOSE 4200
 
 FROM public.ecr.aws/bitnami/nginx:latest
 #FROM nginxinc/nginx-unprivileged
