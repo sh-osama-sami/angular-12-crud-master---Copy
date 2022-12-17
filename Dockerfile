@@ -38,7 +38,7 @@
 # Run in NGINX #
 ################
 #FROM public.ecr.aws/bitnami/node:16.13.1-prod-debian-10-r36 as builder
-FROM node:lts-alpine AS build
+FROM node:lts-alpine AS builder
 
 WORKDIR /app
 COPY package.json package-lock.json ./
