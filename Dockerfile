@@ -1,7 +1,7 @@
 
 ### STAGE 1: Build ###
-#FROM node:lts-alpine AS build
-FROM public.ecr.aws/bitnami/node:16.13.1-prod-debian-10-r36 AS build
+FROM node:lts-alpine AS build
+#FROM public.ecr.aws/bitnami/node:16.13.1-prod-debian-10-r36 AS build
 #### make the 'app' folder the current working directory
 WORKDIR /usr/src/app
 
@@ -21,8 +21,8 @@ COPY . .
 RUN npm run build:ssr
 
 ### STAGE 2: Run ###
-#FROM nginxinc/nginx-unprivileged
-FROM public.ecr.aws/bitnami/nginx:latest
+FROM nginxinc/nginx-unprivileged
+#FROM public.ecr.aws/bitnami/nginx:latest
 #### copy nginx conf
 COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf
 
