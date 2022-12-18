@@ -51,6 +51,7 @@ EXPOSE 4200
 
 FROM public.ecr.aws/bitnami/nginx:latest
 #FROM nginxinc/nginx-unprivileged
+COPY src/nginx/etc/conf.d/default.conf /opt/bitnami/nginx/conf/nginx.conf
 
 COPY --from=builder /dist /opt/bitnami/nginx/html
 #RUN chmod 777 /usr/share/nginx/html/assets/env.js
@@ -84,7 +85,7 @@ CMD ["nginx", "-g", "daemon off;"]
 #CMD ["npm", "start"]
 
 #FROM nginx:alpine
-#COPY src/nginx/etc/conf.d/default.conf /etc/nginx/conf/default.conf
+#COPY src/nginx/etc/conf.d/default.conf /opt/bitnami/nginx/conf/nginx.conf
 
 #COPY --from=builder /apps/dist/Angular12Crud usr/share/nginx/html
 # Copy the EntryPoint
