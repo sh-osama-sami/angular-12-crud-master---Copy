@@ -51,7 +51,7 @@ EXPOSE 4200
 
 FROM public.ecr.aws/bitnami/nginx:latest
 #FROM nginxinc/nginx-unprivileged
-COPY src/nginx/etc/conf.d/default.conf /opt/bitnami/nginx/conf/nginx.conf
+#COPY src/nginx/etc/conf.d/default.conf /opt/bitnami/nginx/conf/nginx.conf
 
 COPY --from=builder /dist /opt/bitnami/nginx/html
 #RUN chmod 777 /usr/share/nginx/html/assets/env.js
